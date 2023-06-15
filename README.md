@@ -1,4 +1,4 @@
-# 01_Plinko
+# Plinko
 Basic 3D Plinko Game
 
 This is the first game that I ever made using Unity
