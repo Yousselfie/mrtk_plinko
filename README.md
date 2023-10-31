@@ -1,6 +1,5 @@
-# Plinko
-Basic 3D Plinko Game
+# MRTK Plinko
 
-This is the first game that I ever made using Unity
+Mixed Reality Plinko game targeting the Hololens 2, utilizing MRTK3.
 
-Tasks : physics-based movement, terrain design, skybox, collision detection, sound effects
+Assets: This project utilizes assets from [vicmo123's](https://github.com/vicmo123/01_Plinko) 3D Plinko Project
