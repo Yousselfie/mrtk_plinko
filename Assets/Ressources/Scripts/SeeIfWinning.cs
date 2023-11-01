@@ -1,36 +1,45 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class SeeIfWinning : MonoBehaviour
-{ 
-    bool endGame = false;
+{
+    public int score;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (gameObject.tag == "winner")
-        {
-            Debug.Log("You win");
+
+    private void OnTriggerEnter(Collider other) { 
+    
+        if  (GameObject.Find("scoreUI").GetComponent<TextMeshProUGUI>().text != score.ToString()) {
+            score = 0;
         }
-        else if (gameObject.tag == "looser")
+
+        if (gameObject.tag == "1000 points")
         {
-            Debug.Log("You loose");
+            score += 1000;
+
+            GameObject.Find("scoreUI").GetComponent<TextMeshProUGUI>().text = score.ToString();
+
+        }
+        else if (gameObject.tag == "500 points")
+        {
+            score += 500;
+            GameObject.Find("scoreUI").GetComponent<TextMeshProUGUI>().text = score.ToString();
+
         }
 
         gameObject.GetComponent<AudioSource>().Play();
-
-        endGame = true;
     }
 
-    private void Update()
+        public void ResetScore()
     {
-        if (endGame)
-        {
-            if (Input.GetKey(KeyCode.Space))
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            }
-        }
+        GameObject.Find("scoreUI").GetComponent<TextMeshProUGUI>().text=score.ToString();
+
     }
 }
+
+
+
+
